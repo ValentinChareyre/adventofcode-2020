@@ -18,7 +18,7 @@ def get_calendar_programs() -> List[str]:
     python_scripts: List[str] = []
     for dirpath, dirnames, filenames in os.walk(calendar_directory):
         for filename in filenames:
-            if filename.startswith("Day") and filename.endswith(".py"):
+            if filename.startswith("Day") and filename.endswith(".py") and "-part" not in filename:
                 python_scripts.append(dirpath + "\\" + filename)
     return python_scripts
 
